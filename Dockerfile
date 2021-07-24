@@ -4,7 +4,7 @@ FROM alpine:latest
 ENV LANG C.UTF-8
 
 # Setup base
-RUN apk add --no-cache dhcp
+RUN apk add --no-cache dhcp && rm -rf /tmp/* /var/cache/apk/*
 
 # Start DHCP server
 CMD ["/usr/sbin/dhcpd", "-4", "-f", "-d", "--no-pid", "-cf", "/data/dhcpd.conf", "-lf", "/data/dhcpd.lease"]
