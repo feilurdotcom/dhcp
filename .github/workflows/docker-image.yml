@@ -34,4 +34,4 @@ jobs:
       run: |
         docker buildx build --push \
         --tag ragnaro/dhcp:latest \
-        linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 .
+        --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8 .
